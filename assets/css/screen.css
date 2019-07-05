@@ -1,0 +1,212 @@
+@font-face {
+  font-family: "Reenie Beanie";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Reenie Beanie"), local("ReenieBeanie"), url(http://themes.googleusercontent.com/static/fonts/reeniebeanie/v3/ljpKc6CdXusL1cnGUSamX4kaQb-UsZVONjobs91YQtw.woff) format("woff");
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #555555;
+}
+
+img.bottom, img.top {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+}
+
+img.bottom {
+  bottom: -5.0em;
+}
+
+img.top {
+  top: -5.0em;
+}
+
+p img {
+  margin-left: 1em;
+}
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+li {
+  line-height: 150%;
+}
+
+#page-wrapper {
+  min-height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+#container {
+  width: 750px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 9%;
+  overflow: auto;
+}
+
+#title-block {
+  float: left;
+}
+
+#title-block h1 a {
+  color: #555555;
+}
+
+#title-block h1 {
+  font-size: 2.3em;
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  margin: 0 0 0 7px;
+}
+
+nav {
+  float: right;
+  margin-right: 10px;
+}
+
+nav > ul {
+  display: block;
+  float: left;
+}
+
+nav > ul > li {
+  list-style-type: none;
+  display: block;
+  float: left;
+}
+
+nav > ul > li > a {
+  padding: 0 10px;
+  color: #0f89b3;
+}
+
+nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 30px 0 0 0;
+}
+
+#picture {
+  float: left;
+  border: 2px solid #bbbbbb;
+  height: 290px;
+  width: 220px;
+  margin-top: 7px;
+  overflow: hidden;
+}
+
+#blurb {
+  float: left;
+  margin: 0 0 0 20px;
+  overflow: hidden;
+}
+
+#blurb > p {
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 18px;
+  width: 490px;
+  text-align: justify;
+}
+
+#content {
+  width: 725px;
+  margin-bottom: 100px;
+  text-align: justify;
+}
+
+#content p {
+  margin-left: 7px;
+}
+
+#endmark {
+  width: 100%;
+  border-top: 12px solid #4fb8e3;
+  position: relative;
+  height: 0;
+  clear: both;
+}
+
+footer {
+  text-align: center;
+}
+
+.map-container {
+    margin-left: 0.5em;
+}
+
+@media screen and (max-width: 760px) {
+  .bottom {
+    display: none;
+  }
+
+  #container, #content {
+    width: auto;
+}
+
+  #content {
+    margin-right: 10px;
+}
+
+  #picture {
+    float: none;
+    margin: 10px auto 10px;
+}
+
+  #blurb {
+    overflow: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+    #blurb > p {
+      width: auto;
+}
+
+  #title-block {
+    font-size: 13px;
+    float: none;
+}
+
+  nav {
+    float: none;
+    width: auto;
+    margin: 10px 0 10px 0.8em;
+}
+    nav ul {
+      width: 270px;
+      margin: 0 auto;
+      float: none;
+      padding: 0;
+}
+}
+@media screen and (max-height: 650px) {
+  #container {
+    padding-top: 10px;
+}
+}

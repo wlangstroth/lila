@@ -1,0 +1,189 @@
+#!/usr/bin/env bash
+
+shared_header_top() {
+    cat << _top_
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+_top_
+}
+
+shared_header_head() {
+    cat << _head_
+    <meta name='viewport' content='width=device-width' />
+    <meta name='description' content='Welcome. My name is Lila Knighton and I am a Registered Social Worker offering individual psychotherapy in Hamilton.' />
+    <link rel='canonical' href='http://www.lilaknighton.com/' />
+    <link rel='index' title='Counselling in Hamilton | Lila Knighton, Counsellor &amp; Psychotherapist Hamilton' href='http://www.lilaknighton.com/' />
+    <link href='/css/normalize.min.css' rel='stylesheet' />
+    <link href='/css/screen.css' rel='stylesheet' />
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if !IE 7]><style type="text/css">#page_wrapper { display: table; height: 100%; }</style><![endif]-->
+    <meta property='og:url' content='http://www.lilaknighton.com/' />
+    <meta property='og:title' content='Lila Knighton Psychotherapy &amp; Counselling' />
+    <meta property='og:description' content='Lila Knighton, Counselling &amp; Psychotherapy Services in Hamilton' />
+    <meta property='og:image' content='/img/lila-head-shot-small.jpg' />
+  </head>
+_head_
+}
+
+shared_footer() {
+    cat << _footer_
+    <script type='text/javascript'>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33604341-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+  </body>
+</html>
+_footer_
+}
+
+capitalize() {
+    echo $1 | gsed 's/\<./\u&/g'
+}
+
+title_tag() {
+    cat << _title_
+    <title>Lila Knighton | Counselling and Psychotherapy Hamilton | `echo $1 | gsed -e 's/\.md$//g' -e 's/\<./\u&/g'`</title>
+_title_
+}
+
+title_block() {
+    cat << _block_
+    <body>
+    <img class='top' src='/img/bg_top_1200.jpg' alt="blue watercolour wash" />
+    <div id='page-wrapper'>
+      <div id='container'>
+        <div id='title-block'>
+          <h1><a href='/'>Lila Knighton MA, MSW, RSW</a></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href='/about.html'>ABOUT</a></li>
+            <li><a href='/psychotherapy.html'>PSYCHOTHERAPY</a></li>
+            <li><a href='/faq.html'>FAQ</a></li>
+          </ul>
+          <div class='clearfix'></div>
+        </nav>
+        <div class='clearfix'></div>
+_block_
+}
+
+index_page() {
+    shared_header_top
+
+    cat << _title_
+    <title>Lila Knighton | Counselling and Psychotherapy Hamilton</title>
+_title_
+
+    shared_header_head
+
+    cat << _body_
+  <body>
+    <img class='top' src='/img/bg_top_1200.jpg' alt="blue watercolour wash" />
+    <img class='bottom' src='/img/bg_bottom_1200.jpg' alt="blue watercolour wash" />
+    <div id='page-wrapper'>
+      <div id='container'>
+_body_
+
+    title_block
+
+    cat << _body_
+        <div id='main'>
+  <div id='picture'>
+    <img src='/img/lila-head-shot-small.jpg' width='250' alt="Lila head shot" />
+  </div>
+  <div id='blurb'>
+  <p>Welcome. My name is Lila Knighton and I am a Registered Social Worker offering individual psychotherapy in Hamilton.</p>
+    <p>
+        As a Social Worker, I take a client-centered approach to psychotherapy. My job is to listen to you with empathy and respect and strive to understand your frame of reference, values, and aspirations. I will also act as witness to your strengths and struggles, learn what you want and need from psychotherapy, and support you to work toward your goals.
+    </p>
+    <p>
+        You may come to me with anything that is affecting your well-being or overwhelming your ability to cope.  You don’t need to be in crisis to benefit from psychotherapy, though.  Many people come to therapy to better understand their thoughts, feelings, and reactions. Others use the space to explore what they want from life, or to strengthen important relationships. Psychotherapy can be a refuge from a world that moves too quickly and stretches our time and attention thin. It can be a space to slow down, reflect, and reconnect with priorities, desires and dreams. It can be an opportunity to focus on you, and to do the work that will allow you to love, work and play better.
+    </p>
+    <p>Learn more <a href='/about'>about me</a>, find out <a href='/psychotherapy'>what type of psychotherapy I offer</a>, and read answers to some <a href='/faq'>frequently asked questions</a>.</p>
+  </div>
+</div>
+</div>
+</div>
+_body_
+
+    shared_footer
+}
+# end index page
+
+# ------------------------------------------------------------------------------
+# Topic page
+# ------------------------------------------------------------------------------
+
+topic_footer() {
+    cat << _footer_
+    </div>
+            </div>
+        </div>
+        <footer>Counselling and Psychotherapy in Hamilton | 327 Ottawa St. North</footer>
+    </div>
+    </div>
+    <div id='endmark'></div>
+_footer_
+}
+
+topic_page() {
+    shared_header_top
+
+    title_tag $1
+
+    shared_header_head
+
+    title_block
+
+    cat << _body_
+        <div id='main'>
+            <div id='content'>
+_body_
+
+    $MDHANDLER $1
+
+    topic_footer
+
+    shared_footer
+}
+
+# ------------------------------------------------------------------------------
+# Moin routine
+# ------------------------------------------------------------------------------
+
+# Load config file
+if [ ! -f site.conf ]; then
+  echo "Cannot find site.conf in current directory"
+  exit 1
+fi
+
+. site.conf
+
+WORKING_DIR=$PWD
+OUTPUT_DIR="$WORKING_DIR/`basename $INPUT_DIR`.static"
+rm -rf $OUTPUT_DIR
+mkdir -p $OUTPUT_DIR
+cp -rf $INPUT_DIR/* $OUTPUT_DIR
+rm -f `find $OUTPUT_DIR -type f -iname '*.md'`
+
+# Parse and generate
+cd $INPUT_DIR
+# do the index page separately
+index_page > $OUTPUT_DIR/index.html;
+echo "* index"
+FILES=`find . -iname '*.md' | sed -e 's|^\./||'`
+for a in $FILES; do
+  b="$OUTPUT_DIR/`echo $a | sed -e 's|\.md$|.html|g'`"
+  echo "* $a"
+  topic_page $a > $b;
+done
+
+exit 0
