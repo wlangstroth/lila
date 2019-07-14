@@ -16,6 +16,10 @@
     clear: both;
 }
 
+html {
+    font-family: sans-serif;
+}
+
 html, body {
   height: 100%;
 }
@@ -49,7 +53,7 @@ a {
 }
 
 li {
-  line-height: 150%;
+  line-height: 1.5;
 }
 
 #page-wrapper {
@@ -70,15 +74,15 @@ li {
   float: left;
 }
 
-#title-block h1 a {
-  color: #555555;
-}
-
 #title-block h1 {
   font-size: 2.3em;
   font-family: "Reenie Beanie", cursive;
   font-weight: 400;
   margin: 0 0 0 7px;
+}
+
+#title-block h1 a {
+  color: #555555;
 }
 
 nav {
@@ -130,7 +134,7 @@ h2 {
 #blurb > p {
   margin-top: 4px;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 1.2;
   width: 490px;
   text-align: justify;
 }
