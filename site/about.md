@@ -1,13 +1,14 @@
 <div itemscope='itemscope' itemtype='http://schema.org/Person'>
 <p itemprop='name' style='display: none'>Lila Knighton</p>
-<p itemprop='description'>I am a Hamilton-based Social Worker in private practice. I offer individual psychotherapy that is grounded in a contemporary psychoanalytic understanding of the therapeutic process. I take a client-centered approach to each new counselling relationship, drawing on tools and strategies from integrative trauma therapy, emotion-focussed therapy, mindfulness, cognitive behavioural therapy and stress reduction techniques as appropriate to each client. Outside of my private practice I do agency work in counselling, clinical writing, and program development.</p>
+<p itemprop='description'>I am a Hamilton-based Social Worker in private practice. I offer individual psychotherapy that is grounded in a contemporary psychoanalytic understanding of the therapeutic process. I take a client-centered approach to each new counselling relationship, drawing on tools and strategies from integrative trauma therapy, emotion-focussed therapy, mindfulness, cognitive behavioural therapy and stress reduction techniques as appropriate to each client.</p>
 <h2>Education</h2>
 <ul>
 <li>BA (Women's Studies), <span itemprop='affiliation'><span itemscope='itemscope' itemtype='http://schema.org/CollegeOrUniversity'>University of Western Ontario</span></span></li>
 <li>MA (Theory and Criticism), <span itemprop='affiliation'><span itemscope='itemscope' itemtype='http://schema.org/CollegeOrUniversity'>University of Western Ontario</span></span></li>
-<li>MSW (Specialization in Mental Health), <span itemprop='affiliation'><span itemscope='itemscope' itemtype='http://schema.org/CollegeOrUniversity'>University of Toronto</span></span></li></ul><h2>Training & Certification</h2>
+<li>MSW (Specialization in Mental Health), <span itemprop='affiliation'><span itemscope='itemscope' itemtype='http://schema.org/CollegeOrUniversity'>University of Toronto</span></span></li></ul>
+<h2>Clinical Training</h2>
 <ul>
-<li>Advanced Training in Psychoanalytic Psychotherapy, Toronto Psychoanalytic Institute</li>
+  <li>Advanced Training in Psychoanalytic Psychotherapy, Toronto Psychoanalytic Society</li>
 <li>Fundamental Psychoanalytic Perspectives Program, Toronto Psychoanalytic Society</li>
 <li>Certification in Clinical Traumatology (TITC-CT), Traumatology Institute Canada</li>
 </ul>

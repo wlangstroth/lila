@@ -18,6 +18,7 @@
     <li>Overwhelming emotions</li>
     <li>Postpartum stress and adjustment</li>
     <li>Self-harm</li>
+    <li>Stress about the state of our world</li>
   </ul>
 
 <p>Contact me at lila@lilaknighton.com or <nobr>416-802-2152</nobr> for more information or to schedule a free consultation. For a prompt reply, email is preferred.</p>
