@@ -1,5 +1,11 @@
 #!/bin/sh
 
+BLACKLIST="index.html"
+INPUT_DIR="site"
+
+# Markdown converter
+MDHANDLER="markdown"
+
 shared_header_top() {
     cat << _top_
 <!doctype html>
@@ -45,12 +51,12 @@ _footer_
 }
 
 capitalize() {
-    echo $1 | gsed 's/\<./\u&/g'
+    echo $1 | sed 's/\<./\u&/g'
 }
 
 title_tag() {
     cat << _title_
-    <title>Lila Knighton | Counselling and Psychotherapy Hamilton | `echo $1 | gsed -e 's/\.md$//g' -e 's/\<./\u&/g'`</title>
+    <title>Lila Knighton | Counselling and Psychotherapy Hamilton | `echo $1 | sed -e 's/\.md$//g' -e 's/\<./\u&/g'`</title>
 _title_
 }
 
@@ -160,13 +166,6 @@ _body_
 # Moin routine
 # ------------------------------------------------------------------------------
 
-# Load config file
-if [ ! -f site.conf ]; then
-  echo "Cannot find site.conf in current directory"
-  exit 1
-fi
-
-. site.conf
 
 WORKING_DIR=$PWD
 OUTPUT_DIR="$WORKING_DIR/`basename $INPUT_DIR`.static"
