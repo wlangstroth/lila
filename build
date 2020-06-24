@@ -65,9 +65,9 @@ title_block() {
         </div>
         <nav>
           <ul>
-            <li><a href='/about.html'>ABOUT</a></li>
-            <li><a href='/psychotherapy.html'>PSYCHOTHERAPY</a></li>
-            <li><a href='/faq.html'>FAQ</a></li>
+            <li><a href='/about'>ABOUT</a></li>
+            <li><a href='/psychotherapy'>PSYCHOTHERAPY</a></li>
+            <li><a href='/faq'>FAQ</a></li>
           </ul>
           <div class='clearfix'></div>
         </nav>
@@ -108,7 +108,7 @@ _body_
     <p>
     You may come to me with anything that is affecting your well-being or hindering your ability to cope. You don’t need to be in active crisis to benefit from psychotherapy, though. Many people come to therapy to better understand their thoughts, feelings, and reactions. Others use the space to explore what they want from life, or to strengthen important relationships. Psychotherapy can be a refuge from a complex and overwhelming world that moves too quickly and stretches our time and attention thin. It can be a space to slow down, reflect, and reconnect with priorities, values and hopes. It can be an opportunity to focus on who you want to be, and to do the work that will allow you to love, work and play better.
     </p>
-    <p>Learn more <a href='/about.html'>about me</a>, find out <a href='/psychotherapy.html'>what type of psychotherapy I offer</a>, and read answers to some <a href='/faq.html'>frequently asked questions</a>.</p>
+    <p>Learn more <a href='/about'>about me</a>, find out <a href='/psychotherapy'>what type of psychotherapy I offer</a>, and read answers to some <a href='/faq'>frequently asked questions</a>.</p>
   </div>
 </div>
 </div>
